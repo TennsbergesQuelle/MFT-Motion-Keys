@@ -2,7 +2,11 @@
 set -euo pipefail
 
 app_dir="$(cd -- "$(dirname -- "$0")" && pwd -P)"
-launcher="$app_dir/Start MFT Motion Keys.sh"
+
+launcher="$app_dir/Start-MFT-Motion Keys.sh"
+if [[ ! -f "$launcher" ]]; then
+    launcher="$app_dir/Start MFT Motion Keys.sh"
+fi
 
 if [[ ! -f "$launcher" ]]; then
     echo "Das Startskript wurde nicht gefunden: $launcher" >&2
@@ -43,6 +47,7 @@ Type=Application
 Name=MFT Motion Keys
 Comment=Startet MFT Motion Keys
 Exec="$escaped_bash" "$escaped_launcher"
+Path=$app_dir
 Terminal=true
 Categories=Utility;
 EOF
