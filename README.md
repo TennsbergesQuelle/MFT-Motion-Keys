@@ -86,9 +86,9 @@ freigegeben.
   Byte 2, Y ist signed 16-bit Big-Endian ab Byte 0.
 - Windows verwendet PyWinUSB; Linux und macOS verwenden HIDAPI. Für die
   Tastaturausgabe wird `pynput` eingesetzt.
-- Diese Plattformversion ist für Windows auf dem vorhandenen Board getestet.
-  macOS- und Linux-Installationen sowie Berechtigungen müssen auf dem jeweiligen
-  Zielgerät geprüft werden. Der HID-Sensor wurde nicht auf diesen Plattformen
+- Diese Plattformversion ist für Windows und Linux Mint auf dem vorhandenen Board getestet.
+  macOS-Installationen sowie Berechtigungen müssen auf dem jeweiligen
+  Zielgerät geprüft werden. Der HID-Sensor wurde nicht auf dieser Plattform
   getestet.
 
 ---
@@ -178,6 +178,6 @@ when the board disconnects or the app closes.
   byte 2, and Y is signed 16-bit big-endian at byte 0.
 - Windows uses PyWinUSB; Linux and macOS use HIDAPI. Keyboard output uses
   `pynput`.
-- This version has been tested on Windows with the available board. Linux and
-  macOS installation and permissions should be verified on the target device;
-  the sensor itself has not been tested on those platforms.
+- This version has been tested on Windows and Linux Mint with the available board.
+  macOS installations and permissions should be verified on the target device;
+  the sensor itself has not been tested on this platform.
