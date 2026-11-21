@@ -4,6 +4,8 @@ MFT Motion Keys ist eine plattformübergreifende Python-App, die das MFT-USB-Boa
 als konfigurierbare Tastatursteuerung verwendet. Sie unterstützt Windows, Linux
 und macOS und installiert keinen eigenen Gerätetreiber.
 
+> **Hinweis:** Dieses Projekt wurde mit Vibe Coding erstellt.
+
 ## Portables Paket und Start
 
 Das Paket benötigt eine installierte Python-3-Version und eine Internetverbindung
@@ -94,6 +96,8 @@ MFT Motion Keys is a cross-platform Python app that turns the MFT USB board into
 a configurable keyboard controller. It supports Windows, Linux and macOS and
 does not install a separate device driver.
 
+> **Note:** This project was vibe coded.
+
 ## Portable package and startup
 
 The package requires Python 3 and an internet connection to install its Python
@@ -104,6 +108,7 @@ extracted folder.
 
 - **Windows:** Double-click `Start MFT Motion Keys.bat`.
 - **Linux:** Run `./Start MFT Motion Keys.sh` in a terminal.
+- **Linux desktop shortcut:** Run `./install`. The script creates a shortcut on the desktop.
 - **macOS:** Double-click `Start MFT Motion Keys.command`. If macOS blocks it,
   run `bash "Start MFT Motion Keys.command"` in Terminal.
 
