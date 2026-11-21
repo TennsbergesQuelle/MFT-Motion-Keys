@@ -6,6 +6,9 @@ und macOS und installiert keinen eigenen Gerätetreiber.
 
 > **Hinweis:** Dieses Projekt wurde mit Vibe Coding erstellt.
 
+Verbesserungsvorschläge und Bugs können jederzeit gemeldet werden. Öffne dafür
+bitte ein Issue im GitHub-Repositorium.
+
 ## Portables Paket und Start
 
 Das Paket benötigt eine installierte Python-3-Version und eine Internetverbindung
@@ -97,6 +100,9 @@ a configurable keyboard controller. It supports Windows, Linux and macOS and
 does not install a separate device driver.
 
 > **Note:** This project was vibe coded.
+
+Suggestions for improvements and bug reports can be submitted at any time.
+Please open an issue in the GitHub repository.
 
 ## Portable package and startup
 
