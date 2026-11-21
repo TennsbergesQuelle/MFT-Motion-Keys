@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+app_dir="$(cd -- "$(dirname -- "$0")" && pwd -P)"
+launcher="$app_dir/Start MFT Motion Keys.sh"
+
+if [[ ! -f "$launcher" ]]; then
+    echo "Das Startskript wurde nicht gefunden: $launcher" >&2
+    exit 1
+fi
+
+desktop_dir=""
+if command -v xdg-user-dir >/dev/null 2>&1; then
+    desktop_dir="$(xdg-user-dir DESKTOP 2>/dev/null || true)"
+fi
+
+if [[ -z "$desktop_dir" ]]; then
+    desktop_dir="$HOME/Desktop"
+fi
+
+if ! command -v bash >/dev/null 2>&1; then
+    echo "Bash wurde nicht gefunden. Bitte Bash installieren." >&2
+    exit 1
+fi
+
+mkdir -p -- "$desktop_dir"
+
+escape_desktop_arg() {
+    local value="$1"
+    value="${value//\\/\\\\}"
+    value="${value//\"/\\\"}"
+    value="${value//%/%%}"
+    printf '%s' "$value"
+}
+
+desktop_file="$desktop_dir/MFT Motion Keys.desktop"
+escaped_bash="$(escape_desktop_arg "$(command -v bash)")"
+escaped_launcher="$(escape_desktop_arg "$launcher")"
+
+cat > "$desktop_file" <<EOF
+[Desktop Entry]
+Type=Application
+Name=MFT Motion Keys
+Comment=Startet MFT Motion Keys
+Exec="$escaped_bash" "$escaped_launcher"
+Terminal=true
+Categories=Utility;
+EOF
+
+chmod +x -- "$desktop_file"
+echo "Desktop-Verknüpfung erstellt: $desktop_file"
